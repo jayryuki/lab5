@@ -10,11 +10,7 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
-	$("#testjs").click(function(e) {
-		$('.jumbotron h1').text("Javascript has taken control!");
-		$(".jumbotron p").toggleClass("active");
-	});
-	$("a.name").click(projectClick)
+	$("a.name").click(projectClick);
 }
 
 function anagrammedName(name) {
@@ -52,12 +48,11 @@ function anagrammedName(name) {
 
 
 function projectClick(e) {
-    // prevent the page from reloading      
+    
     e.preventDefault();
-    // In an event handler, $(this) refers to      
-    // the object that triggered the event      
+    
 	var originalName = $(this).text();
-	$(this).text(anagrammedName(originalName));
+	$("#actualName").text(anagrammedName(originalName));
 	
  
 	
